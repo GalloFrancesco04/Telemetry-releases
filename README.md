@@ -11,7 +11,7 @@ Get **Telemetry.exe** from the [latest release](https://github.com/GalloFrancesc
 
 Windows says the publisher is unrecognised because the executable isn't code signed. Choose **More info**, then **Run anyway**.
 
-The app tells you when a newer version is out and updates itself from Settings. Each release also carries `Telemetry.exe.sha256`, so you can check a download yourself.
+The app tells you when a newer version is out, shows what's new in it, and updates itself from Settings. Each release also carries `Telemetry.exe.sha256`, so you can check a download yourself.
 
 ## Games
 
@@ -24,7 +24,7 @@ Start the app before or after the game. It finds whichever game is on track and 
 
 Every session is recorded at about 95 samples a second from Assetto Corsa and 60 from iRacing (iRacing's own rate). The app records speed, pedals, gear, steering, RPM, lap and sector times, position on track, tyres, fuel, g-forces, suspension, aids and brake bias. A session in which the car never moved is not kept.
 
-The library lists sessions by day, with the circuit, car, length, laps and best lap. You can search, rename and delete them. Short runs with no full lap fold into a single row.
+The library lists sessions by day, with the circuit, car, length, laps and best lap. You can search, rename and delete them, and give each one a note ("new tyres", "setup v3") to tell sessions apart later. Short runs with no full lap fold into a single row. A session's preview shows its map, best lap and sectors, and your best lap in that car on that circuit, session by session, so you can see whether you're getting quicker.
 
 ![The session library](images/library.png)
 
@@ -40,7 +40,7 @@ Open a session and pick two laps: a reference and the lap to compare with it. Th
 
 ![Corner T2 picked: the charts zoomed to the corner, and its time split into braking, entry, apex and exit](images/corner.png)
 
-The corners table puts every lap against every corner, so you can see which corners you drive the same way every lap and which you don't. Its last row adds up your best time through each stretch into a theoretical best lap.
+The corners table puts every lap against every corner. Its theoretical best row adds up your best time through each stretch into a lap, and its consistency row shows how far your typical lap is from your quickest in each corner: the corners where practice pays.
 
 ![The corners table: every lap's time through every stretch of Laguna Seca, and the theoretical best](images/table.png)
 
@@ -55,10 +55,22 @@ The circuit is saved with the recording, so a session still opens with its map o
 
 ## While driving
 
-- **Live** opens by itself when you go on track. It shows a timing screen, live traces and the map, with your best lap as a ghost car.
-- **Dash:** a fullscreen dash with revs, speed, gear, delta to your best lap, lap and sector times, inputs and tyres. **M** moves it to another monitor, **Esc** closes it.
+- **Live** opens by itself when you go on track. It shows a timing screen, the lap so far against your best on the same charts as the review screen, the map with your best lap as a ghost car, and the time gained or lost in each corner as you drive it. The delta can be to this session's best lap or to your best ever in that car on that circuit. When you leave the track, it sums the session up: best lap, theoretical best, against your best ever, and your most and least consistent corners.
+
+![Live on lap 11 at Laguna Seca: half a second up on the best lap, with the corners driven so far](images/live.png)
+
+- **Dash:** a fullscreen dash with revs, speed, gear, delta to your best lap, lap and sector times, inputs, tyres, and fuel with the laps it's good for. **M** moves it to another monitor, **Esc** closes it.
+
+![The dash at 227 km/h in fifth, with the shift lights nearly full](images/dash.png)
+
 - **Overlay:** a strip of telemetry over the game, with cells you can rearrange. The game has to run borderless windowed, because nothing can draw over exclusive fullscreen.
+
+![The overlay](images/overlay.png)
+
 - **Shift lights:** they light up and flash at the car's shift points. They can sit in the overlay or in a window of their own.
+
+![The shift lights just before an upshift](images/shift-lights.png)
+
 - **Remote dash:** the same dash in a browser on a phone or tablet on your home network. It has no password, so turn it on only on a network you trust.
 
 ## Your data
